@@ -22,6 +22,14 @@ The primary goal is to offload monitoring tasks from resource-constrained hardwa
 | `error_code` | int | 1 | The integer value sent to the heartbeat topic when a timeout occurs. |
 | `enable_debug_msg` | bool | false | If true, publishes additional human-readable status strings to a debug topic. |
 
+## Installation
+```bash
+cd ros2_ws/src
+git clone https://github.com/TheOnlyLoki/topic_watchdog.git
+cd ..
+colcon build --symlink-install --packages-select topic_watchdog
+```
+
 ## Launch
 
 The node is designed to be launched dynamically based on a YAML configuration.
@@ -32,8 +40,6 @@ ros2 launch topic_watchdog watchdog.launch.py
 ```
 
 The `watchdog.launch.py` script parses the `watchdog_params.yaml` file and automatically instantiates a separate node for every configuration block defined in the file. This allows for monitoring multiple sensors without modifying the source code.
-
-Hier ist die ergänzte und verfeinerte Version für den unteren Teil deiner README. Ich habe die Liste der geplanten Features etwas technischer formuliert, damit sie für andere Entwickler auf GitHub ansprechender wirkt.
 
 ### Manual Execution
 
@@ -50,3 +56,5 @@ ros2 run topic_watchdog watchdog_node --ros-args -p input_topic:=cmd_vel -p erro
 * [ ] **Multi-Topic Support:** Allowing a single node instance to monitor multiple related topics.
 * [ ] **Dynamic Publisher Configuration:** Support for multiple output topics per node.
 * [ ] **Expanded Diagnostics:** Integration with the standard `diagnostic_msgs` for better ROS 2 ecosystem compatibility.
+
+Feel free to contribute <3
