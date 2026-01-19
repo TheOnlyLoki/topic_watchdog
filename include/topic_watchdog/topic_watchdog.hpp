@@ -20,8 +20,10 @@ class TopicWatchdog : public rclcpp::Node {
         rclcpp::TimerBase::SharedPtr watchdog_timer;
         rclcpp::Time last_rx_time;
         rclcpp::Duration threshold;
+        std::chrono::milliseconds check_interval;
         std::string input_topic_name;
         bool enable_debug_msg;
+        int error_code;
         
         void timer_callback();
         void received_callback(const std_msgs::msg::String::SharedPtr msg);
