@@ -51,7 +51,7 @@ ros2 run topic_watchdog watchdog_node --ros-args -p input_topic:=cmd_vel -p erro
 ```
 
 ## Planned Features
-
+* [ ] **Generic Subscriber:** allowing every message type without modifying the code
 * [ ] **Latency and Jitter Measurement:** Monitoring the consistency of message frequencies.
 * [ ] **Multi-Topic Support:** Allowing a single node instance to monitor multiple related topics.
 * [ ] **Dynamic Publisher Configuration:** Support for multiple output topics per node.
